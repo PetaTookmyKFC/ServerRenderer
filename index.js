@@ -4,9 +4,11 @@ const { Worker } = require("worker_threads");
 exports.Render = function (filepath) {
     console.log("Rendering File ", filepath);
 
+    let directory = path.join(__dirname, "render_worker.js");
+
     return new Promise((resolve, reject) => {
         try {
-            let render = new Worker("./render_worker.js");
+            let render = new Worker(directory);
 
             render.on("message", (message) => {
                 console.log("Get Message from Worker! ", message);
