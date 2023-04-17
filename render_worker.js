@@ -23,6 +23,9 @@ function ParceFile(filepath) {
         try {
             let code = fs.readFileSync(filepath).toString();
             let codeArray = code.split(/(<ser>(\s|\S)*?\<\/ser>)/gi);
+
+
+
             if (codeArray.length > 1) {
                 while (codeArray.length > 0) {
                     write(codeArray[0]);
@@ -37,7 +40,11 @@ function ParceFile(filepath) {
                         codeArray.shift();
                     }
                 }
+            } else {
+                write(codeArray[0]);
+                codeArray.shift();
             }
+
             resolve();
         } catch (error) {
             reject(error);
