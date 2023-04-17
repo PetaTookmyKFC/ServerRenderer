@@ -1,5 +1,6 @@
 const fs = require("fs");
 const { Worker } = require("worker_threads");
+const path = require("path");
 
 exports.Render = function (filepath) {
     console.log("Rendering File ", filepath);
