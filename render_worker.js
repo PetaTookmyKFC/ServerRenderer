@@ -3,6 +3,8 @@ const { parentPort } = require("worker_threads");
 const fs = require("fs");
 const path = require("path");
 
+console.log = () => {}
+
 let veriables = {};
 let Responce = "";
 
@@ -12,7 +14,9 @@ const write = (Message) => {
 }
 
 parentPort.on("message", async (msg) => {
+    
     console.log("Got file" , msg);
+
     // Make Everything inside server tag
     await ParceFile(msg);
     parentPort.postMessage(Responce);

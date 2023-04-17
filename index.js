@@ -12,7 +12,7 @@ exports.Render = function (filepath) {
             let render = new Worker(directory);
 
             render.on("message", (message) => {
-                console.log("Get Message from Worker! ", message);
+                // console.log("Get Message from Worker! ", message);
                 resolve(message);
                 render.terminate();
             });
