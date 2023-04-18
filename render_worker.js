@@ -12,7 +12,13 @@ const write = (Message) => {
 }
 
 parentPort.on("message", async (msg) => {
+<<<<<<< HEAD
     // console.log("Got file" , msg);
+=======
+    
+    console.log("Got file" , msg);
+
+>>>>>>> cdd8a31d518472b31352119db2b0fec1af027190
     // Make Everything inside server tag
     await ParceFile(msg);
     parentPort.postMessage(Responce);
