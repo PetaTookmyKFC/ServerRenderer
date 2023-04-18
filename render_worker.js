@@ -3,6 +3,8 @@ const { parentPort } = require("worker_threads");
 const fs = require("fs");
 const path = require("path");
 
+console.log = () => {}
+
 let veriables = {};
 let Responce = "";
 
