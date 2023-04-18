@@ -7,16 +7,16 @@ let veriables = {};
 let Responce = "";
 
 const write = (Message) => {
-    console.log("Writting");
+    // console.log("Writting");
     Responce = Responce + Message;
 }
 
 parentPort.on("message", async (msg) => {
-    console.log("Got file" , msg);
+    // console.log("Got file" , msg);
     // Make Everything inside server tag
     await ParceFile(msg);
     parentPort.postMessage(Responce);
-    console.log(Responce);
+    // console.log(Responce);
 });
 function ParceFile(filepath) {
     return new Promise(async (resolve, reject) => {
